@@ -1,0 +1,16 @@
+name: Nabu Fireshots String Templates Git Action
+
+on:
+  push:
+    branches:
+      - 'feature/github-actions'
+  pull_request:
+    branches:
+      - 'feature/github-actions'
+  
+jobs:
+  steps:
+    - name: Read Dump file
+    run: |
+      head dump.sql
+    
