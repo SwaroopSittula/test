@@ -1,0 +1,117 @@
+name: Nabu Fireshots String Templates Git Action
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  Login:
+    name: Login to ECR
+    runs-on: self-hosted
+    steps:
+      - name: Execute AWS ECR Login Command
+        run: |
+          aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 703145693148.dkr.ecr.us-east-2.amazonaws.com
+  Build:
+    name: Build Fireshots
+    runs-on: self-hosted
+    needs: [Login]
+    container:
+      image: 703145693148.dkr.ecr.us-east-2.amazonaws.com/nabu_base:v2.5.0.0-rc1
+      options: -v  /home/github/java/.m2/repository/:/root/.m2/repository/
+    services:
+      redis.nabu:
+        image: 703145693148.dkr.ecr.us-east-2.amazonaws.com/modakecrrepo:nabu_redis-1.0
+        ports:
+          - 6379:6379
+        env:
+          REDIS_PASSWORD : "QddV5&2a)Ym8AQtP"
+      ldap.nabu:
+        image: 703145693148.dkr.ecr.us-east-2.amazonaws.com/modakecrrepo:nabu_ldap-1.0
+        ports:
+          - 389:389
+        env:
+          LDAP_ADMIN_PASSWORD : Ndbk5Lgb
+          LDAP_DOMAIN : modak.com
+          LDAP_ORGANISATION : modak
+      kosh.nabu:
+        image: postgres:13.4
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER : sv_account_1
+          POSTGRES_PASSWORD : zU7dKvnVqD
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - name: Cloning Fireshots Code
+        uses: actions/checkout@v2
+        with:
+          repository: modakanalytics/nabu-fireshots
+          token: ${{secrets.PAT_GITHUB}}
+          ref: feature/github-actions
+      - name: Configure settings.xml,building Fireshots and removing string templates
+        run: |
+          #Adding setting.xml file in .m2 folder
+          envsubst '$DEFAULT_AZURE_TOKEN $DEFAULT_NABU_MAVEN_URL $DEFAULT_NABU_MAVEN_USER $DEFAULT_NABU_MAVEN_PASS' < $NABU_ROOT_INSTALLATION/common/conf/settings.xml > /root/.m2/settings.xml
+          #Packaging Fireshots
+          source /root/.bashrc && mvn -B clean package -DskipTests
+          rm -rf src/test/resources/stringtemplates
+        env :
+          DEFAULT_AZURE_TOKEN: ${{secrets.AZURE_TOKEN}}
+          DEFAULT_NABU_MAVEN_USER: ${{secrets.JFROG_USERNAME}}
+          DEFAULT_NABU_MAVEN_PASS: ${{secrets.JFROG_TOKEN}}
+          DEFAULT_NABU_MAVEN_URL: ${{secrets.JFROG_URL}}
+      - name: Cloning String Templates code
+        uses: actions/checkout@v2
+        with:
+          repository: modakanalytics/nabu-fireshots-string-templates
+          token: ${{secrets.PAT_GITHUB}}
+          path: src/test/resources/stringtemplates
+		      lfs: 'true'
+      - name: Cloning Swagger Utility
+        uses: actions/checkout@v2
+        with:
+          repository: modakanalytics/nabu-fireshots-api-testing-framework
+          token: ${{secrets.PAT_GITHUB}}
+          path: swagger-utility
+      - name: Building Swagger-utility to generate swagger.json
+        run: |
+          cd ${GITHUB_WORKSPACE}/swagger-utility
+          source /root/.bashrc && mvn -B clean package -DskipTests
+          rm -f config/nabu_*.json && cp ${GITHUB_WORKSPACE}/src/test/resources/stringtemplates/resources/nabu_*.json ${GITHUB_WORKSPACE}/swagger-utility/config/
+          sh bin/run_swagger_code_generator.sh
+          sleep 10s
+          cat config/swagger_output_apis.json
+          rm -f ${GITHUB_WORKSPACE}/src/test/resources/swagger.json
+          mv config/swagger_output_apis.json ${GITHUB_WORKSPACE}/src/test/resources/swagger.json
+      - name: Load data to postgres
+        run : |
+           set -e
+           cd ${GITHUB_WORKSPACE}/
+           PGPASSWORD="zU7dKvnVqD" psql -U sv_account_1 -h kosh.nabu -p 5432 -d postgres -c "drop database if exists kosh"
+           PGPASSWORD="zU7dKvnVqD" psql -U sv_account_1 -h kosh.nabu -p 5432 -d postgres -c "create database kosh"
+           PGPASSWORD="zU7dKvnVqD" psql -U sv_account_1 -h kosh.nabu -p 5432 -d postgres -f ./src/test/resources/stringtemplates/resources/data/data_dump.sql
+      - name: Run Fireshots and Schemathesis
+        run: |
+          cp target/nabu-fireshots-*.jar ./target/libs/
+          sh ./src/test/resources/scripts/run_fireshots.sh 8061
+          sleep 20s
+          export LC_CTYPE="en_US.UTF-8"
+          pip3 install schemathesis
+          yum -y update && yum install -y mutt postfix mailx cyrus-sasl cyrus-sasl-lib cyrus-sasl-plain psmisc
+          mv ${GITHUB_WORKSPACE}/src/test/resources/stringtemplates/resources ${GITHUB_WORKSPACE}/
+          sh ${GITHUB_WORKSPACE}/resources/install_postfix.sh
+          envsubst '${EMAIL_RECIPIENTS} ${GITHUB_WORKSPACE}' < ${GITHUB_WORKSPACE}/resources/notify.sh > ${GITHUB_WORKSPACE}/resources/notify_tmp.sh && mv ${GITHUB_WORKSPACE}/resources/notify_tmp.sh ${GITHUB_WORKSPACE}/resources/notify.sh
+          sh ./src/test/resources/scripts/run_schemathesis.sh
+          sh ${GITHUB_WORKSPACE}/resources/notify.sh
+        env:
+          EMAIL_RECIPIENTS: ${{secrets.EMAIL_RECIPIENTS}}
+      - name: Stop services
+        run: |
+          fuser -k 8061/tcp
+          PGPASSWORD="zU7dKvnVqD" psql -v ON_ERROR_STOP=1 -U sv_account_1 -h kosh.nabu -p 5432 -d postgres -c "drop database kosh"
+          # exit `cat exit_status.code`
