@@ -68,10 +68,10 @@ jobs:
       - name: Cloning String Templates code
         uses: actions/checkout@v2
         with:
+          lfs: 'true'
           repository: modakanalytics/nabu-fireshots-string-templates
           token: ${{secrets.PAT_GITHUB}}
           path: src/test/resources/stringtemplates
-		      lfs: 'true'
       - name: Cloning Swagger Utility
         uses: actions/checkout@v2
         with:
