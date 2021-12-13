@@ -9,7 +9,7 @@ on:
 jobs:
   Build:
     name: Build Fireshots
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     container:
       image: dockerhub.modak.com/nabu_base:v2.5.0.2
       options: -v  /home/github/java/.m2/repository/:/root/.m2/repository/
@@ -81,14 +81,14 @@ jobs:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           source: 's3://nabukosh/prod_dump/data_dump.sql'
-          dest: './src/test/resources/stringtemplates/resources/data/'
+          dest: './src/test/resources/stringtemplates/resources/'
       - name: Load data to postgres
         run : |
            set -e
            cd ${GITHUB_WORKSPACE}/
            PGPASSWORD="zU7dKvnVqD" psql -U sv_account_1 -h kosh.nabu -p 5432 -d postgres -c "drop database if exists kosh"
            PGPASSWORD="zU7dKvnVqD" psql -U sv_account_1 -h kosh.nabu -p 5432 -d postgres -c "create database kosh"
-           PGPASSWORD="zU7dKvnVqD" psql -U sv_account_1 -h kosh.nabu -p 5432 -d postgres -f ./src/test/resources/stringtemplates/resources/data/data_dump.sql
+           PGPASSWORD="zU7dKvnVqD" psql -U sv_account_1 -h kosh.nabu -p 5432 -d postgres -f ./src/test/resources/stringtemplates/resources/data_dump.sql
       - name: Run Fireshots and Schemathesis
         run: |
           cp target/nabu-fireshots-*.jar ./target/libs/
