@@ -1,37 +1,28 @@
 name: Nabu Fireshots String Templates Git Action
-
 on:
   push:
     branches:
-      - '*'
+      - 'feature/github-actions'
   pull_request:
     branches:
-      - '*'
-
+      - 'feature/github-actions'
 jobs:
-  Login:
-    name: Login to ECR
-    runs-on: self-hosted
-    steps:
-      - name: Execute AWS ECR Login Command
-        run: |
-          aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 703145693148.dkr.ecr.us-east-2.amazonaws.com
   Build:
     name: Build Fireshots
     runs-on: self-hosted
     needs: [Login]
     container:
-      image: 703145693148.dkr.ecr.us-east-2.amazonaws.com/nabu_base:v2.5.0.0-rc1
+      image: dockerhub.modak.com/nabu_base:v2.5.0.2
       options: -v  /home/github/java/.m2/repository/:/root/.m2/repository/
     services:
       redis.nabu:
-        image: 703145693148.dkr.ecr.us-east-2.amazonaws.com/modakecrrepo:nabu_redis-1.0
+        image: dockerhub.modak.com/nabu_redis:v2.5.0.1
         ports:
           - 6379:6379
         env:
           REDIS_PASSWORD : "QddV5&2a)Ym8AQtP"
       ldap.nabu:
-        image: 703145693148.dkr.ecr.us-east-2.amazonaws.com/modakecrrepo:nabu_ldap-1.0
+        image: dockerhub.modak.com/nabu_ldap:v2.5.0.1
         ports:
           - 389:389
         env:
@@ -54,23 +45,20 @@ jobs:
           token: ${{secrets.PAT_GITHUB}}
           ref: feature/github-actions
       - name: Configure settings.xml,building Fireshots and removing string templates
-        run: |
+        run : |
           #Adding setting.xml file in .m2 folder
-          envsubst '$DEFAULT_AZURE_TOKEN $DEFAULT_NABU_MAVEN_URL $DEFAULT_NABU_MAVEN_USER $DEFAULT_NABU_MAVEN_PASS' < $NABU_ROOT_INSTALLATION/common/conf/settings.xml > /root/.m2/settings.xml
-          #Packaging Fireshots
-          source /root/.bashrc && mvn -B clean package -DskipTests
-          rm -rf src/test/resources/stringtemplates
+          envsubst '$DEFAULT_AZURE_TOKEN $DEFAULT_NABU_MAVEN_URL $DEFAULT_NABU_AZURE_MAVEN_URL $DEFAULT_NABU_MAVEN_USER $DEFAULT_NABU_MAVEN_PASS $DEFAULT_NABU_AZURE_MAVEN_PASS $DEFAULT_NABU_AZURE_MAVEN_USER' < $NABU_ROOT_INSTALLATION/common/conf/settings.xml > /root/.m2/settings.xml
         env :
           DEFAULT_AZURE_TOKEN: ${{secrets.AZURE_TOKEN}}
+          DEFAULT_NABU_AZURE_MAVEN_USER: ${{secrets.NABU_AZURE_MAVEN_USER}}
+          DEFAULT_NABU_AZURE_MAVEN_PASS: ${{secrets.AZURE_TOKEN}}
           DEFAULT_NABU_MAVEN_USER: ${{secrets.JFROG_USERNAME}}
           DEFAULT_NABU_MAVEN_PASS: ${{secrets.JFROG_TOKEN}}
           DEFAULT_NABU_MAVEN_URL: ${{secrets.JFROG_URL}}
+          DEFAULT_NABU_AZURE_MAVEN_URL: ${{secrets.NABU_AZURE_MAVEN_URL}}
       - name: Cloning String Templates code
         uses: actions/checkout@v2
         with:
-          lfs: 'true'
-          repository: modakanalytics/nabu-fireshots-string-templates
-          token: ${{secrets.PAT_GITHUB}}
           path: src/test/resources/stringtemplates
       - name: Cloning Swagger Utility
         uses: actions/checkout@v2
@@ -88,6 +76,13 @@ jobs:
           cat config/swagger_output_apis.json
           rm -f ${GITHUB_WORKSPACE}/src/test/resources/swagger.json
           mv config/swagger_output_apis.json ${GITHUB_WORKSPACE}/src/test/resources/swagger.json
+      - name: Copy a file from s3
+          uses: prewk/s3-cp-action@v2
+          with:
+            aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            source: 's3://nabukosh/prod_dump/data_dump.sql'
+            dest: './src/test/resources/stringtemplates/resources/data/'
       - name: Load data to postgres
         run : |
            set -e
