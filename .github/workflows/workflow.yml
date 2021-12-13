@@ -15,6 +15,7 @@ jobs:
         - name: Update git
           run: |
               sudo apt-get install git
+              git --version
         - name: Switch to LFS
           uses: actions/checkout@v2
           with:
