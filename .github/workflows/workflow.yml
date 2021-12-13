@@ -76,13 +76,13 @@ jobs:
           cat config/swagger_output_apis.json
           rm -f ${GITHUB_WORKSPACE}/src/test/resources/swagger.json
           mv config/swagger_output_apis.json ${GITHUB_WORKSPACE}/src/test/resources/swagger.json
-      - name: Copy a file from s3
-          uses: prewk/s3-cp-action@v2
-          with:
-            aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            source: 's3://nabukosh/prod_dump/data_dump.sql'
-            dest: './src/test/resources/stringtemplates/resources/data/'
+      - name: Download Dumpfile from AWS
+        uses: prewk/s3-cp-action@v2
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          source: 's3://nabukosh/prod_dump/data_dump.sql'
+          dest: './src/test/resources/stringtemplates/resources/data/'
       - name: Load data to postgres
         run : |
            set -e
