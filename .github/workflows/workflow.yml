@@ -10,7 +10,6 @@ jobs:
   Build:
     name: Build Fireshots
     runs-on: self-hosted
-    needs: [Login]
     container:
       image: dockerhub.modak.com/nabu_base:v2.5.0.2
       options: -v  /home/github/java/.m2/repository/:/root/.m2/repository/
