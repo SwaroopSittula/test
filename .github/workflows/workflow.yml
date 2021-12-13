@@ -12,6 +12,9 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+        - name: Update git
+          run: |
+              sudo apt-get install git
         - name: Switch to LFS
           uses: actions/checkout@v2
           with:
