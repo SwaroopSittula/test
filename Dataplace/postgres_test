@@ -1,0 +1,34 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "Sourcedb_postgreSQL Creds",
+      "dataplace_name" : "Testpostgres12",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "postgres",
+      "crawl_frequency" : {
+        "consider_timezone" : false,
+        "cron_freq" : "0 11 22 11 1 ? 2022",
+        "cron_timezone" : "Asia/Calcutta",
+        "cron_type" : "one_time"
+      },
+      "contact_info" : {
+        "owner" : "VP0705",
+        "description" : "",
+        "email" : "vishali.pillutla@modak.com"
+      },
+      "source_info" : {
+        "database_name" : "source_db",
+        "filters_enabled" : false,
+        "host_name" : "w3.devpsql.modak.com:5432"
+      }
+    }
+  ],
+  "dataplace_tag_details" : [
+    {
+      "tag_category_name" : "Environment",
+      "tag_value" : "Data"
+    }
+  ]
+}
