@@ -6,6 +6,12 @@
       "description" : "",
       "destination_dataplace_name" : "oracle_test1",
       "destination_schema_name" : "NABU_SWAT_DBSRV",
+      "ingestion_table_format" : {
+        "database_name" : false,
+        "prefix" : false,
+        "prefix_value" : "",
+        "schema_name" : false
+      },
       "workflow_engine_name" : "oracle_adls_snowflake",
       "compute_engine_name" : "Spark Almaren CE",
       "source_type" : "postgres",
