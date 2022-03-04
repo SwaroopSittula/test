@@ -1,0 +1,25 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "Redis_sales",
+      "dataplace_name" : "mysql_crawl_duplicate",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "mysql",
+      "description" : "",
+      "source_info" : {
+        "database_name" : "sales",
+        "filter_list" : [
+          {
+            "filter_value" : "sales",
+            "filter_type" : "Where IN clause"
+          }
+        ],
+        "filters_enabled" : true,
+        "host_name" : "w3.redis.modak.com:3306"
+      }
+    }
+  ],
+  "dataplace_tag_details" : []
+}
