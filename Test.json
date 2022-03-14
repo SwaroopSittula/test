@@ -1,0 +1,71 @@
+{
+  "data_movement_tag_details" : [],
+  "data" : [
+    {
+      "data_movement_name" : "sharepoint_import",
+      "description" : "",
+      "destination_dataplace_name" : "AmazonS3",
+      "destination_schema_name" : "nabuingestion",
+      "ingestion_table_format" : null,
+      "workflow_engine_name" : "default_engine",
+      "compute_engine_name" : "s3_stream",
+      "source_type" : "sharepoint",
+      "destination_type" : "s3",
+      "bot_priority" : "Default",
+      "advance_table_options" : null,
+      "flow_details" : {
+        "parallel_source_connections" : 0,
+        "destination_file_format" : "",
+        "verification_threshold" : "",
+        "pipeline_retry" : false,
+        "retry_count" : 0,
+        "ignore_data_types" : [],
+        "schema_drift" : {
+          "email_ids" : [],
+          "advanced_options_sub_type" : "",
+          "config" : {
+            "suffix" : "",
+            "timestamp" : ""
+          },
+          "enabled" : false
+        },
+        "skip_verification" : true,
+        "pipeline_flow_timeout" : 0,
+        "pre_conditions" : {
+          "pipeline_timeout" : 8,
+          "enabled" : false
+        },
+        "unsupported_data_types" : [
+          {
+            "asis" : [],
+            "null" : [],
+            "ignore" : [],
+            "customtext" : []
+          }
+        ]
+      },
+      "next_schedule_date" : "15-May-2024 00:00:00 IST"
+    }
+  ],
+  "data_movement_details" : [
+    {
+      "dataplace_name" : "Sharepoint_semi_11",
+      "schema_name" : "https://modakanalytics0.sharepoint.com/sites/nabu_crawling",
+      "total_count" : 3,
+      "root_location_path" : "https://modakanalytics0.sharepoint.com/sites/nabu_crawling",
+      "ingest_all_tables_views" : [],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "2012-bloomington-civil-city-anual-compensation.csv",
+            "2016-first-quarter-stolen-guns.csv",
+            "201711782427541655.csv"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 2
+        }
+      ]
+    }
+  ]
+}
