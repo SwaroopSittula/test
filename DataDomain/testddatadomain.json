@@ -1,0 +1,91 @@
+{
+  "dataplace_details" : [
+    {
+      "dataplace_name" : "Crawl DB",
+      "schema_name" : "chembl",
+      "filter_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "component_sequences",
+            "drug_indication",
+            "component_synonyms",
+            "drug_mechanism"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 1
+        }
+      ],
+      "table_count" : 4
+    }
+  ],
+  "datastore_details" : [
+    {
+      "datastore_name" : "test_entity_count_search",
+      "description" : "Sample datastore to test entity counts",
+      "connection_type" : "postgres",
+      "permission" : [],
+      "indexing_configuration" : {
+        "compute_engine_name" : "default_compute_engine",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "filter_resolving_configuration" : {
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "profiling_configuration" : {
+        "compute_engine_name" : "default_compute_engine",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      }
+    }
+  ],
+  "tags" : [
+    {
+      "tag_category_name" : "Environment",
+      "tag_value" : "Test"
+    },
+    {
+      "tag_category_name" : "Others",
+      "tag_value" : "Testing"
+    },
+    {
+      "tag_category_name" : "Info",
+      "tag_value" : "metadata"
+    },
+    {
+      "tag_category_name" : "Info",
+      "tag_value" : "test"
+    },
+    {
+      "tag_category_name" : "simple",
+      "tag_value" : "check"
+    },
+    {
+      "tag_category_name" : "data",
+      "tag_value" : "test"
+    },
+    {
+      "tag_category_name" : "Domain",
+      "tag_value" : "Messaging"
+    },
+    {
+      "tag_category_name" : "Type",
+      "tag_value" : "ID number"
+    },
+    {
+      "tag_category_name" : "Use case",
+      "tag_value" : "UC101"
+    },
+    {
+      "tag_category_name" : "pipeline",
+      "tag_value" : "ingestion"
+    }
+  ]
+}
