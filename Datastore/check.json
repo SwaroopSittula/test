@@ -12,8 +12,8 @@
         {
           "filter_name" : "static",
           "filter_value" : [
-            7039974,
-            7039975
+            "activities",
+            "action_type"
           ],
           "filter_type" : "Static",
           "priority_order" : 1
@@ -33,8 +33,8 @@
         {
           "filter_name" : "static",
           "filter_value" : [
-            13256325,
-            13256326
+            "bot_factory",
+            "bot_configuration_workflow"
           ],
           "filter_type" : "Static",
           "priority_order" : 4
@@ -58,12 +58,8 @@
         {
           "filter_name" : "static",
           "filter_value" : [
-            13256321,
-            13256322,
-            13256323,
-            13256324,
-            13256325,
-            13256326
+            "bot_factory",
+            "bot_configuration_workflow"
           ],
           "filter_type" : "Static",
           "priority_order" : 1
