@@ -1,0 +1,87 @@
+{
+  "data_movement_tag_details" : [],
+  "data" : [
+    {
+      "data_movement_name" : "adv table options test",
+      "description" : "",
+      "destination_dataplace_name" : "adls2_h",
+      "destination_schema_name" : "nabucrawling",
+      "ingestion_table_format" : {
+        "database_name" : true,
+        "prefix" : false,
+        "prefix_value" : "",
+        "schema_name" : true
+      },
+      "workflow_engine_name" : "default_engine",
+      "compute_engine_name" : "default_compute_engine",
+      "source_type" : "postgres",
+      "destination_type" : "adls_gen2",
+      "bot_priority" : "Default",
+      "advance_table_options" : null,
+      "flow_details" : {
+        "parallel_source_connections" : 10,
+        "destination_file_format" : "",
+        "verification_threshold" : "",
+        "pipeline_retry" : false,
+        "retry_count" : 3,
+        "ignore_data_types" : [],
+        "schema_drift" : {
+          "email_ids" : [],
+          "advanced_options_sub_type" : "drop_create_table",
+          "config" : {
+            "suffix" : "",
+            "timestamp" : ""
+          },
+          "enabled" : false
+        },
+        "skip_verification" : true,
+        "pipeline_flow_timeout" : 72,
+        "ignore_null_tables" : false,
+        "pre_conditions" : {
+          "pipeline_timeout" : 8,
+          "enabled" : false
+        },
+        "unsupported_data_types" : [
+          {
+            "asis" : [],
+            "null" : [
+              "bigint",
+              "boolean",
+              "character varying",
+              "text",
+              "integer",
+              "numeric",
+              "smallint",
+              "varchar",
+              "timestamp without time zone",
+              "date"
+            ],
+            "ignore" : [],
+            "customtext" : []
+          }
+        ]
+      },
+      "next_schedule_date" : "16-Dec-2022 14:32:00 IST"
+    }
+  ],
+  "data_movement_details" : [
+    {
+      "dataplace_name" : "Bug reproduce",
+      "schema_name" : "chembl",
+      "total_count" : 86,
+      "ingest_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "none",
+          "filter_value" : [],
+          "filter_type" : "None",
+          "priority_order" : 1
+        }
+      ]
+    }
+  ]
+}
