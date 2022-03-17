@@ -1,0 +1,78 @@
+{
+  "data_movement_tag_details" : [],
+  "data" : [
+    {
+      "data_movement_name" : "sql_Server_dep",
+      "description" : "",
+      "destination_dataplace_name" : "hive_sample_db",
+      "destination_schema_name" : "sample",
+      "ingestion_table_format" : {
+        "database_name" : false,
+        "prefix" : false,
+        "prefix_value" : "",
+        "schema_name" : false
+      },
+      "workflow_engine_name" : "default_engine",
+      "compute_engine_name" : "Almaren_spark_engine",
+      "source_type" : "sql_server",
+      "destination_type" : "hive",
+      "bot_priority" : "Default",
+      "advance_table_options" : null,
+      "flow_details" : {
+        "parallel_source_connections" : 10,
+        "destination_file_format" : "Parquet",
+        "verification_threshold" : "",
+        "pipeline_retry" : false,
+        "retry_count" : 3,
+        "ignore_data_types" : [],
+        "schema_drift" : {
+          "email_ids" : [],
+          "advanced_options_sub_type" : "drop_create_table",
+          "config" : {
+            "suffix" : "",
+            "timestamp" : ""
+          },
+          "enabled" : false
+        },
+        "skip_verification" : true,
+        "pipeline_flow_timeout" : 72,
+        "ignore_null_tables" : false,
+        "pre_conditions" : {
+          "pipeline_timeout" : 8,
+          "enabled" : false
+        },
+        "unsupported_data_types" : [
+          {
+            "asis" : [],
+            "null" : [],
+            "ignore" : [],
+            "customtext" : []
+          }
+        ]
+      },
+      "next_schedule_date" : null
+    }
+  ],
+  "data_movement_details" : [
+    {
+      "dataplace_name" : "Sqlserver_crawling",
+      "schema_name" : "test",
+      "total_count" : 1,
+      "ingest_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "test_partition"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 1
+        }
+      ]
+    }
+  ]
+}
