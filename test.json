@@ -1,0 +1,19 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "nabu_v3_creds",
+      "dataplace_name" : "nabu_v3_conn",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "postgres",
+      "description" : "",
+      "source_info" : {
+        "database_name" : "nabu_v3",
+        "filters_enabled" : false,
+        "host_name" : "w3.devpsql.modak.com:5432"
+      }
+    }
+  ],
+  "dataplace_tag_details" : []
+}
