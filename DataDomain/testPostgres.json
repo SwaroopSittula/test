@@ -1,0 +1,50 @@
+{
+  "dataplace_details" : [
+    {
+      "dataplace_name" : "Bug reproduce",
+      "schema_name" : "chembl",
+      "filter_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "action_type_materialized_view",
+            "action_type"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 1
+        }
+      ],
+      "table_count" : 2
+    }
+  ],
+  "datastore_details" : [
+    {
+      "datastore_name" : "postgrestestdomain",
+      "description" : "",
+      "connection_type" : "postgres",
+      "permission" : [
+        "Reviewer"
+      ],
+      "indexing_configuration" : {
+        "compute_engine_name" : "default_compute_engine",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "filter_resolving_configuration" : {
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "profiling_configuration" : {
+        "compute_engine_name" : null,
+        "workflow_engine_name" : null,
+        "priority" : "Default"
+      }
+    }
+  ],
+  "tags" : []
+}
