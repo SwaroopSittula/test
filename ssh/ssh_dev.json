@@ -7,17 +7,7 @@
       "is_active" : true,
       "is_sensitive" : false,
       "connection_type" : "postgres",
-      "crawl_frequency" : {
-        "consider_timezone" : false,
-        "cron_freq" : "0 03 18 24 9 ? 2021",
-        "cron_timezone" : "Asia/Calcutta",
-        "cron_type" : "one_time"
-      },
-      "contact_info" : {
-        "owner" : "ST1406",
-        "description" : "Starburst Postgres source",
-        "email" : "siva.tatiparthi@modak.com"
-      },
+      "description" : "Starburst Postgres source",
       "source_info" : {
         "database_name" : "skin_poc",
         "filters_enabled" : false,
