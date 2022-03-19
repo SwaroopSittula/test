@@ -1,0 +1,19 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "sb_postgres_skinpoc",
+      "dataplace_name" : "Skin_Cancer_Ananlysis",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "postgres",
+      "description" : "Starburst Postgres source",
+      "source_info" : {
+        "database_name" : "skin_poc",
+        "filters_enabled" : false,
+        "host_name" : "w3.training4.modak.com:5432"
+      }
+    }
+  ],
+  "dataplace_tag_details" : []
+}
