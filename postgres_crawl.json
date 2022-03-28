@@ -1,0 +1,24 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "Sourcedb_postgreSQL Creds",
+      "dataplace_name" : "test_post_conn",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "postgres",
+      "description" : "",
+      "source_info" : {
+        "database_name" : "source_db",
+        "filters_enabled" : false,
+        "host_name" : "w3.devpsql.modak.com:5432"
+      }
+    }
+  ],
+  "dataplace_tag_details" : [
+    {
+      "tag_category_name" : "Environment",
+      "tag_value" : "Test"
+    }
+  ]
+}
