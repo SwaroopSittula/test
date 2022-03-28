@@ -1,0 +1,24 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "vk2508_test",
+      "dataplace_name" : "testl",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "postgres",
+      "description" : "",
+      "source_info" : {
+        "database_name" : "training",
+        "filters_enabled" : false,
+        "host_name" : "w3.training4.modak.com:5432"
+      }
+    }
+  ],
+  "dataplace_tag_details" : [
+    {
+      "tag_category_name" : "SecurityGroup",
+      "tag_value" : "Clinical"
+    }
+  ]
+}
