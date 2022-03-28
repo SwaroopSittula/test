@@ -1,0 +1,19 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "MySQL 10m",
+      "dataplace_name" : "MySQL Crawling",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "mysql",
+      "description" : "",
+      "source_info" : {
+        "database_name" : "nabu",
+        "filters_enabled" : false,
+        "host_name" : "w3.devsql.modak.com:3306"
+      }
+    }
+  ],
+  "dataplace_tag_details" : []
+}
