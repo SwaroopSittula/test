@@ -1,0 +1,25 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "SAPHanaCredentials",
+      "dataplace_name" : "saphana",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "sap_hana",
+      "description" : "",
+      "source_info" : {
+        "filter_list" : [
+          {
+            "filter_value" : "",
+            "filter_type" : ""
+          }
+        ],
+        "database_name" : "H00",
+        "filters_enabled" : true,
+        "host_name" : "f1cd913c-8db4-43e4-b602-e7d4ac98fade.hana.trial-us10.hanacloud.ondemand.com:443"
+      }
+    }
+  ],
+  "dataplace_tag_details" : []
+}
