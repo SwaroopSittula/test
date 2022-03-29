@@ -1,0 +1,18 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "TestCredential",
+      "dataplace_name" : "testdocumentum",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "documentum",
+      "description" : "",
+      "source_info" : {
+        "docbroker_host_name" : "localhost.modak.com:1471",
+        "docbase_name" : "documentum"
+      }
+    }
+  ],
+  "dataplace_tag_details" : []
+}
