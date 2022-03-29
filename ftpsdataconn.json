@@ -1,0 +1,30 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "testftps",
+      "dataplace_name" : "Dataconnectionfortestingftpsflow",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "ftps",
+      "description" : "",
+      "source_info" : {
+        "path" : "/home/ftpuser",
+        "port" : 23,
+        "connection_mode" : "passive",
+        "fetch_stats_type" : "directory",
+        "fetch_column_metadata" : {
+          "tsv" : true,
+          "csv" : true,
+          "num_of_rows_for_delimiter_files_scan" : 100000,
+          "avro" : true
+        },
+        "is_delimiter" : false,
+        "proxy_url" : "",
+        "explicit_tls" : true,
+        "host_name" : "10.50.0.229"
+      }
+    }
+  ],
+  "dataplace_tag_details" : []
+}
