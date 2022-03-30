@@ -1,0 +1,134 @@
+{
+  "data_movement_tag_details" : [],
+  "data" : [
+    {
+      "data_movement_name" : "Testrenameoptioncase1_duplicate",
+      "description" : "",
+      "destination_dataplace_name" : "Testcdhhive_duplicate",
+      "destination_schema_name" : "test",
+      "ingestion_table_format" : {
+        "database_name" : true,
+        "prefix" : false,
+        "prefix_value" : "",
+        "schema_name" : true
+      },
+      "workflow_engine_name" : "ak2310_engine",
+      "compute_engine_name" : "TestingIngestionModes",
+      "source_type" : "postgres",
+      "destination_type" : "hive",
+      "bot_priority" : "Default",
+      "advance_table_options" : [
+        {
+          "columns_options" : {
+            "modified_columns" : [],
+            "virtual_column" : [],
+            "excluded_column_ids" : []
+          },
+          "CDC" : {
+            "audit_columns" : {
+              "prev_process_id_column_name" : "",
+              "end_date_column_name" : "valid_to_ts",
+              "process_id_column_name" : "",
+              "start_date_column_name" : "valid_from_ts"
+            },
+            "CDC_process_type" : "",
+            "add_audit_columns" : false,
+            "columns_ids" : [],
+            "CDC_type" : "",
+            "create_view" : false,
+            "hash_type" : "",
+            "view_name" : "v_new test case 2"
+          },
+          "sort_by_columns" : [],
+          "incremental_load" : {
+            "condition_values" : [],
+            "where_clause" : ""
+          },
+          "parallel_ingestion" : {
+            "max_connections" : 1,
+            "enable" : false
+          },
+          "remove_duplicates" : {
+            "sort_columns" : [],
+            "key_columns" : []
+          },
+          "table_id" : 17240967,
+          "reorder_columns" : [],
+          "table_name" : "new_test",
+          "dataplace_id" : 2401,
+          "ingestion_mode" : {
+            "mode" : "Overwrite",
+            "enable" : true
+          },
+          "ingest_using_query" : {
+            "enable" : false,
+            "sql_query" : ""
+          },
+          "schema_id" : 411642,
+          "new_table_name" : "",
+          "table_partitions" : []
+        }
+      ],
+      "flow_details" : {
+        "pipeline_retry" : false,
+        "ignore_data_types" : [],
+        "schema_drift" : {
+          "email_ids" : [],
+          "advanced_options_sub_type" : "drop_create_table",
+          "config" : {
+            "suffix" : "",
+            "timestamp" : ""
+          },
+          "enabled" : false
+        },
+        "skip_verification" : true,
+        "ignore_null_tables" : false,
+        "pre_conditions" : {
+          "pipeline_timeout" : 8,
+          "enabled" : false
+        },
+        "parallel_source_connections" : 10,
+        "spark_config" : {
+          "spark_kerberos_command_options" : "LS1jb25mIHNwYXJrLnlhcm4ua2V5dGFiPSROQUJVX1NQQVJLX0NVUkFUSU9OX0tFWVRBQl9QQVRIIFwNCi0tY29uZiBzcGFyay55YXJuLnByaW5jaXBhbD0kTkFCVV9TUEFSS19DVVJBVElPTl9QUklOQ0lQQUwgXA",
+          "spark_bots_token_command_options" : "LS1jb25mIHNwYXJrLm5hYnUudG9rZW49PCVib3RzX3Rva2VuJT4",
+          "spark_default_command_options" : "LS1tYXN0ZXIgeWFybiBcDS0tbmFtZSAiPCVwaXBlbGluZV9uYW1lJT4iIFwNLS1wYWNrYWdlcyAiY29tLmdpdGh1Yi5tdXNpYy1vZi10aGUtYWludXI6YWxtYXJlbi1mcmFtZXdvcmtfMi4xMTowLjkuMS0yLjQsY29tLmdpdGh1Yi5tdXNpYy1vZi10aGUtYWludXI6aHR0cC1hbG1hcmVuXzIuMTE6MS4yLjAtMi40IiBcDS0tamFycyAiJE5BQlVfU1BBUktfQk9UX0hPTUUvamFycy9uYWJ1LXNwYXJrYm90LWxpYi1jb21tb24tYXNzZW1ibHktMC44LjYuamFyIiBcDS0tY29uZiBzcGFyay5keW5hbWljQWxsb2NhdGlvbi5lbmFibGVkPWZhbHNlIFwNLS1jb25mIHNwYXJrLnNxbC5zaHVmZmxlLnBhcnRpdGlvbnM9MTAgXA0tLWNvbmYgc3BhcmsuZHJpdmVyLmFyZ3M9IiIgIFwNLS1jb25mIHNwYXJrLnVpLmVuYWJsZWQ9ZmFsc2UgXA0tLWRyaXZlci1tZW1vcnkgMkcgXA0tLWV4ZWN1dG9yLWNvcmVzIDIgXA0tLW51bS1leGVjdXRvcnMgNSBcDS0tZXhlY3V0b3ItbWVtb3J5IDVHIFw="
+        },
+        "destination_file_format" : "Parquet",
+        "verification_threshold" : "10%",
+        "retry_count" : 3,
+        "pipeline_flow_timeout" : 72,
+        "unsupported_data_types" : [
+          {
+            "asis" : [],
+            "null" : [],
+            "ignore" : [],
+            "customtext" : []
+          }
+        ]
+      },
+      "next_schedule_date" : null
+    }
+  ],
+  "data_movement_details" : [
+    {
+      "dataplace_name" : "testtestdbpostgres",
+      "schema_name" : "test",
+      "total_count" : 1,
+      "ingest_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "new_test"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 1
+        }
+      ]
+    }
+  ]
+}
