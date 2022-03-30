@@ -1,40 +1,26 @@
 {
-  "data" : [
+  "dataplace_details" : [],
+  "datastore_details" : [
     {
-      "credential_type" : "Plain",
-      "credential_name" : "Hivecdhcred",
-      "dataplace_name" : "Testcdhhive",
-      "is_active" : true,
-      "is_sensitive" : false,
-      "connection_type" : "hive",
+      "datastore_name" : "Snowflake Datastore",
       "description" : "",
-      "source_info" : {
-        "metastore_info" : {
-          "metastore_credential_type" : "Plain",
-          "metastore_schema_name" : "test",
-          "metastore_credential_name" : "Hivecdhcred",
-          "jdbc_url" : "jdbc:mysql://w3.cdhnode1.modak.com:3306/hive"
-        },
-        "connection_type" : null,
-        "jdbc_info" : {
-          "jdbc_credential_type" : "Plain",
-          "jdbc_credential_name" : "Hivecdhcred",
-          "database_name" : "test",
-          "jdbc_url" : "jdbc:hive2://w3.cdhnode1.modak.com:10000"
-        },
-        "connection_mode" : "Cluster mode",
-        "filters_enabled" : "false",
-        "filesystem_info" : {
-          "filesystem_credential_type" : "Plain",
-          "filesystem_credential_name" : "Hivecdhcred",
-          "ingestion_root_path" : "/user/ingestion",
-          "file_system_type" : "HDFS",
-          "directory" : "/user/ingestion",
-          "hdfs_uri" : "w3.cdhnode1.modak.com:8020",
-          "file_system_type_id" : 1
-        }
+      "connection_type" : "snowflake",
+      "permission" : [],
+      "indexing_configuration" : {
+        "compute_engine_name" : "spark_datastore",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "filter_resolving_configuration" : {
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "profiling_configuration" : {
+        "compute_engine_name" : "spark_datastore",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
       }
     }
   ],
-  "dataplace_tag_details" : []
+  "tags" : []
 }
