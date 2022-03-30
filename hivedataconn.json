@@ -1,0 +1,31 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "TestCredential",
+      "dataplace_name" : "TestHive20",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "hive",
+      "description" : "",
+      "source_info" : {
+        "metastore_info" : {
+          "metastore_credential_type" : "Plain",
+          "metastore_schema_name" : "",
+          "metastore_credential_name" : "TestCredential",
+          "jdbc_url" : "jdbc:mysql://test.com:5434"
+        },
+        "connection_type" : null,
+        "jdbc_info" : {
+          "jdbc_credential_type" : "Plain",
+          "jdbc_credential_name" : "TestCredential",
+          "database_name" : "test",
+          "jdbc_url" : "jdbc:hive2://test.com:43"
+        },
+        "connection_mode" : "JDBC mode",
+        "filters_enabled" : "false"
+      }
+    }
+  ],
+  "dataplace_tag_details" : []
+}
