@@ -1,0 +1,45 @@
+{
+  "dataplace_details" : [
+    {
+      "dataplace_name" : "snowflake_crawl",
+      "schema_name" : "PUBLIC",
+      "filter_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "none",
+          "filter_value" : [],
+          "filter_type" : "None",
+          "priority_order" : 1
+        }
+      ],
+      "table_count" : 0
+    }
+  ],
+  "datastore_details" : [
+    {
+      "datastore_name" : "test_snowflake1",
+      "description" : "",
+      "connection_type" : "snowflake",
+      "permission" : [],
+      "indexing_configuration" : {
+        "compute_engine_name" : "default_compute_engine",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "filter_resolving_configuration" : {
+        "workflow_engine_name" : "test_engine",
+        "priority" : "Default"
+      },
+      "profiling_configuration" : {
+        "compute_engine_name" : null,
+        "workflow_engine_name" : null,
+        "priority" : "Default"
+      }
+    }
+  ],
+  "tags" : []
+}
