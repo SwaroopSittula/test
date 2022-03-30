@@ -1,0 +1,72 @@
+{
+  "data_movement_tag_details" : [],
+  "data" : [
+    {
+      "data_movement_name" : "Pyspark test",
+      "description" : "",
+      "destination_dataplace_name" : "PySpark Curation",
+      "destination_schema_name" : "Pipeline",
+      "ingestion_table_format" : null,
+      "workflow_engine_name" : "default_engine",
+      "compute_engine_name" : "Spark Almaren CE",
+      "source_type" : "pyspark",
+      "destination_type" : "pyspark",
+      "bot_priority" : "Default",
+      "advance_table_options" : null,
+      "flow_details" : {
+        "parallel_source_connections" : 3,
+        "destination_file_format" : "",
+        "verification_threshold" : "",
+        "pipeline_retry" : false,
+        "retry_count" : 10,
+        "ignore_data_types" : [],
+        "schema_drift" : {
+          "email_ids" : [],
+          "config" : {
+            "suffix" : "",
+            "timestamp" : ""
+          },
+          "enabled" : false
+        },
+        "skip_verification" : true,
+        "pipeline_flow_timeout" : 20,
+        "pre_conditions" : {
+          "pipeline_timeout" : 8,
+          "enabled" : false
+        },
+        "git_info" : {
+          "git_branch_or_tag" : "master",
+          "git_file_path" : "code/curation.py",
+          "git_url" : "git@github.com:modakanalytics/nabu-poc-curation.git",
+          "project_name" : "nabu-poc-curation"
+        },
+        "unsupported_data_types" : [
+          {
+            "asis" : [],
+            "null" : [],
+            "ignore" : [],
+            "customtext" : []
+          }
+        ]
+      },
+      "next_schedule_date" : null
+    }
+  ],
+  "data_movement_details" : [
+    {
+      "dataplace_name" : "PySpark Curation",
+      "schema_name" : "Pipeline",
+      "total_count" : 1,
+      "root_location_path" : null,
+      "ingest_all_tables_views" : [],
+      "filters_list" : [
+        {
+          "filter_name" : "none",
+          "filter_value" : [],
+          "filter_type" : "None",
+          "priority_order" : 1
+        }
+      ]
+    }
+  ]
+}
