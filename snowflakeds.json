@@ -1,0 +1,26 @@
+{
+  "dataplace_details" : [],
+  "datastore_details" : [
+    {
+      "datastore_name" : "Snowflake Datastore",
+      "description" : "",
+      "connection_type" : "snowflake",
+      "permission" : [],
+      "indexing_configuration" : {
+        "compute_engine_name" : "spark_datastore",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "filter_resolving_configuration" : {
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "profiling_configuration" : {
+        "compute_engine_name" : "spark_datastore",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      }
+    }
+  ],
+  "tags" : []
+}
