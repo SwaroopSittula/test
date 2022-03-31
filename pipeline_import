@@ -1,0 +1,87 @@
+{
+  "data_movement_tag_details" : [],
+  "data" : [
+    {
+      "data_movement_name" : "Testrenameoptioncase1_duplicate_import",
+      "description" : "",
+      "destination_dataplace_name" : "AmazonS3",
+      "destination_schema_name" : "nabuingestion",
+      "ingestion_table_format" : {
+        "database_name" : true,
+        "prefix" : false,
+        "prefix_value" : "",
+        "schema_name" : true
+      },
+      "workflow_engine_name" : "default_engine",
+      "compute_engine_name" : "spark almaren ce rt",
+      "source_type" : "postgres",
+      "destination_type" : "s3",
+      "bot_priority" : "Default",
+      "advance_table_options" : null,
+      "flow_details" : {
+        "parallel_source_connections" : 10,
+        "destination_file_format" : "",
+        "verification_threshold" : "",
+        "pipeline_retry" : false,
+        "retry_count" : 3,
+        "ignore_data_types" : [],
+        "schema_drift" : {
+          "email_ids" : [],
+          "advanced_options_sub_type" : "drop_create_table",
+          "config" : {
+            "suffix" : "",
+            "timestamp" : ""
+          },
+          "enabled" : false
+        },
+        "skip_verification" : true,
+        "pipeline_flow_timeout" : 72,
+        "ignore_null_tables" : false,
+        "pre_conditions" : {
+          "pipeline_timeout" : 8,
+          "enabled" : false
+        },
+        "unsupported_data_types" : [
+          {
+            "asis" : [],
+            "null" : [
+              "boolean",
+              "bigint",
+              "timestamp without time zone",
+              "varchar",
+              "smallint",
+              "date",
+              "numeric",
+              "integer",
+              "character varying",
+              "text"
+            ],
+            "ignore" : [],
+            "customtext" : []
+          }
+        ]
+      },
+      "next_schedule_date" : "08-May-2024 00:00:00 IST"
+    }
+  ],
+  "data_movement_details" : [
+    {
+      "dataplace_name" : "Bug reproduce",
+      "schema_name" : "chembl",
+      "total_count" : 86,
+      "ingest_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "none",
+          "filter_value" : [],
+          "filter_type" : "None",
+          "priority_order" : 1
+        }
+      ]
+    }
+  ]
+}
