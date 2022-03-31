@@ -1,0 +1,46 @@
+{
+  "dataplace_details" : [
+    {
+      "dataplace_name" : "Mongodb Crawling",
+      "schema_name" : "nabu",
+      "filter_all_tables_views" : [
+        "T",
+        "V"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "cust_field"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 1
+        }
+      ],
+      "table_count" : 0
+    }
+  ],
+  "datastore_details" : [
+    {
+      "datastore_name" : "MongoDB Test",
+      "description" : "",
+      "connection_type" : "mongodb",
+      "permission" : [],
+      "indexing_configuration" : {
+        "compute_engine_name" : "spark_engine",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "filter_resolving_configuration" : {
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "profiling_configuration" : {
+        "compute_engine_name" : null,
+        "workflow_engine_name" : null,
+        "priority" : "Default"
+      }
+    }
+  ],
+  "tags" : []
+}
