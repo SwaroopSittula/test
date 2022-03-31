@@ -1,0 +1,27 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Plain",
+      "credential_name" : "Snowflake Credentials",
+      "dataplace_name" : "Snowfalke Crawling",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "snowflake",
+      "description" : "",
+      "source_info" : {
+        "database_name" : "TESTING",
+        "filesystem_info" : {
+          "bucket" : "",
+          "container" : "synp",
+          "filesystem_credential_type" : "Azure Data Lake Storage Gen 2",
+          "accountName" : "nabuswatstoragenew",
+          "filesystem_credential_name" : "ADLS Gen2",
+          "ingestion_root_path" : "/",
+          "file_system_type" : "adls_gen2"
+        },
+        "host_name" : "https://SL53808.ap-south-1.aws.snowflakecomputing.com"
+      }
+    }
+  ],
+  "dataplace_tag_details" : []
+}
