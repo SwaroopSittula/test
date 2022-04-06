@@ -1,0 +1,79 @@
+{
+  "data_movement_tag_details" : [],
+  "data" : [
+    {
+      "data_movement_name" : "bigquery_hive1",
+      "description" : "",
+      "destination_dataplace_name" : "hive_mysql_inc",
+      "destination_schema_name" : "customers",
+      "ingestion_connection_type" : null,
+      "ingestion_table_format" : {
+        "database_name" : false,
+        "prefix" : false,
+        "prefix_value" : "",
+        "schema_name" : false
+      },
+      "workflow_engine_name" : "oracle_adls_snowflake",
+      "compute_engine_name" : "spark almaren ce rt",
+      "source_type" : "bigquery",
+      "destination_type" : "hive",
+      "bot_priority" : "Default",
+      "advance_table_options" : null,
+      "flow_details" : {
+        "parallel_source_connections" : 10,
+        "destination_file_format" : "Parquet",
+        "verification_threshold" : "",
+        "pipeline_retry" : false,
+        "retry_count" : 3,
+        "ignore_data_types" : [],
+        "schema_drift" : {
+          "email_ids" : [],
+          "advanced_options_sub_type" : "drop_create_table",
+          "config" : {
+            "suffix" : "",
+            "timestamp" : ""
+          },
+          "enabled" : false
+        },
+        "skip_verification" : true,
+        "pipeline_flow_timeout" : 72,
+        "ignore_null_tables" : false,
+        "pre_conditions" : {
+          "pipeline_timeout" : 8,
+          "enabled" : false
+        },
+        "unsupported_data_types" : [
+          {
+            "asis" : [],
+            "null" : [],
+            "ignore" : [],
+            "customtext" : []
+          }
+        ]
+      },
+      "next_schedule_date" : null
+    }
+  ],
+  "data_movement_details" : [
+    {
+      "dataplace_name" : "bigquery123",
+      "schema_name" : "aa0703",
+      "total_count" : 1,
+      "ingest_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "integer_type"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 1
+        }
+      ]
+    }
+  ]
+}
