@@ -1,0 +1,119 @@
+{
+  "dataplace_details" : [
+    {
+      "dataplace_name" : "Bug reproduce",
+      "schema_name" : "chembl_06_05_2019",
+      "filter_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "activities",
+            "action_type"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 1
+        }
+      ],
+      "table_count" : 2
+    },
+    {
+      "dataplace_name" : "postgres_0706",
+      "schema_name" : "nabu",
+      "filter_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "bot_factory",
+            "bot_configuration_workflow"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 4
+        },
+        {
+          "filter_name" : "inclusive_regex",
+          "filter_value" : [
+            "_"
+          ],
+          "filter_type" : "Inclusive Regex",
+          "priority_order" : 3
+        },
+        {
+          "filter_name" : "inclusive_like",
+          "filter_value" : [
+            "bot"
+          ],
+          "filter_type" : "Inclusive Like",
+          "priority_order" : 2
+        },
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "bot_factory",
+            "bot_configuration_workflow"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 1
+        }
+      ],
+      "table_count" : 2
+    },
+    {
+      "dataplace_name" : "postgres_0706",
+      "schema_name" : "pipeline_info",
+      "filter_all_tables_views" : [
+        "T",
+        "V",
+        "M"
+      ],
+      "filters_list" : [
+        {
+          "filter_name" : "none",
+          "filter_value" : [],
+          "filter_type" : "None",
+          "priority_order" : 1
+        }
+      ],
+      "table_count" : 0
+    }
+  ],
+  "datastore_details" : [
+    {
+      "datastore_name" : "postgres_0706_duplicate",
+      "description" : "testing",
+      "connection_type" : "postgres",
+      "permission" : [
+        "Reviewer"
+      ],
+      "indexing_configuration" : {
+        "compute_engine_name" : "default_compute_engine",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "filter_resolving_configuration" : {
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      },
+      "profiling_configuration" : {
+        "compute_engine_name" : "default_compute_engine",
+        "workflow_engine_name" : "default_engine",
+        "priority" : "Default"
+      }
+    }
+  ],
+  "tags" : [
+    {
+      "tag_category_name" : "Others",
+      "tag_value" : "Testing"
+    }
+  ]
+}
