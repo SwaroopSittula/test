@@ -1,0 +1,6 @@
+.gitConfig
+(and)
+.git/config
+
+user unknown
+email global(known) local(unknown)
