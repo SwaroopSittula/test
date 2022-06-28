@@ -1,0 +1,43 @@
+{
+  "dataplace_details" : [
+    {
+      "dataplace_name" : "crawl_s3_3054_sample",
+      "schema_name" : "nabucrawlerbucket",
+      "filter_all_tables_views" : [],
+      "filters_list" : [
+        {
+          "filter_name" : "static",
+          "filter_value" : [
+            "FlyRNAi_data_baseline_vs_EGF.tsv"
+          ],
+          "filter_type" : "Static",
+          "priority_order" : 2
+        }
+      ],
+      "table_count" : 1
+    }
+  ],
+  "datastore_details" : [
+    {
+      "datastore_name" : "metadata_indexing_test_vk",
+      "description" : "",
+      "connection_type" : "s3",
+      "permission" : [],
+      "indexing_configuration" : {
+        "compute_engine_name" : "test_vinod_dup",
+        "workflow_engine_name" : "test_vinod",
+        "priority" : "Default"
+      },
+      "filter_resolving_configuration" : {
+        "workflow_engine_name" : "test_vinod",
+        "priority" : "Default"
+      },
+      "profiling_configuration" : {
+        "compute_engine_name" : "test_vinod_dup",
+        "workflow_engine_name" : "test_vinod",
+        "priority" : "Default"
+      }
+    }
+  ],
+  "tags" : []
+}
