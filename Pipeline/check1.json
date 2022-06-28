@@ -1,0 +1,9 @@
+{
+  "data_movement_tag_details" : [],
+  "data" : [],
+  "data_movement_details" : [
+    {
+      "error_msg" : "All source data connections for this pipeline have been deleted. Please create a new pipeline"
+    }
+  ]
+}
