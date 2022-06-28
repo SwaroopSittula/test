@@ -1,0 +1,49 @@
+{
+  "data" : [
+    {
+      "credential_type" : "Username with password",
+      "credential_name" : "Hivecdhcred",
+      "dataplace_name" : "ykdbhive_test",
+      "is_active" : true,
+      "is_sensitive" : false,
+      "connection_type" : "hive",
+      "description" : "",
+      "source_info" : {
+        "metastore_info" : {
+          "metastore_credential_type" : "Username with password",
+          "metastore_schema_name" : "ykdb",
+          "metastore_credential_name" : "Hivecdhcred",
+          "jdbc_url" : "jdbc:mysql://w3.cdhnode1.modak.com:3306/hive"
+        },
+        "connection_type" : null,
+        "jdbc_info" : {
+          "jdbc_credential_type" : "Username with password",
+          "jdbc_credential_name" : "Hivecdhcred",
+          "database_name" : "ykdb",
+          "jdbc_url" : "jdbc:hive2://w3.cdhnode1.modak.com:10000"
+        },
+        "connection_mode" : "Cluster mode",
+        "filters_enabled" : false,
+        "filesystem_info" : {
+          "filesystem_credential_type" : "Username with password",
+          "filesystem_credential_name" : "Hivecdhcred",
+          "ingestion_root_path" : "/user/ingestion",
+          "file_system_type" : "HDFS",
+          "directory" : "/user/ingestion",
+          "hdfs_uri" : "w3.cdhnode1.modak.com:8020",
+          "file_system_type_id" : 1
+        }
+      }
+    }
+  ],
+  "dataplace_tag_details" : [
+    {
+      "tag_category_name" : "SecurityGroup",
+      "tag_value" : "Clinical"
+    },
+    {
+      "tag_category_name" : "testing",
+      "tag_value" : "userInterface"
+    }
+  ]
+}
