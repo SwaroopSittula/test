@@ -1,9 +1,459 @@
 {
-  "data_movement_tag_details" : [],
-  "data" : [],
-  "data_movement_details" : [
+  "CurationPipeline" : [
     {
-      "error_msg" : "All source data connections for this pipeline have been deleted. Please create a new pipeline"
+      "pipelineJson" : {
+        "linkToPortIdProperty" : "endPortId",
+        "is_pipeline_validated" : false,
+        "is_active" : true,
+        "nodeKeyProperty" : "nodeId",
+        "refresh_freq" : {
+          "consider_timezone" : false,
+          "cron_freq" : "0 15 15 27 6 ? 2022",
+          "cron_timezone" : "Asia/Calcutta",
+          "cron_type" : "one_time"
+        },
+        "linkToKeyProperty" : "toNodeId",
+        "source_records" : null,
+        "preview_records" : null,
+        "linkDataArray" : [
+          {
+            "endPortId" : 1006,
+            "data" : {
+              "schema" : {}
+            },
+            "originPortId" : 1010,
+            "toNodeId" : 100000001,
+            "linkType" : "schemalink",
+            "fromNodeId" : 100000003,
+            "link_id" : 10002
+          },
+          {
+            "endPortId" : 1009,
+            "data" : {
+              "schema" : {}
+            },
+            "originPortId" : 1016,
+            "toNodeId" : 100000003,
+            "linkType" : "schemalink",
+            "fromNodeId" : 100000005,
+            "link_id" : 10003
+          }
+        ],
+        "nodeDataArray" : [
+          {
+            "uiNodeOrder" : "4A",
+            "node_error_msg" : "",
+            "nodeVersion" : 1,
+            "nodeTypeId" : 20,
+            "nodeTypeUiConfig" : {
+              "acceptedPortProperties" : [
+                {
+                  "port_properties_id" : 4,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : false,
+                    "porttype_id" : 2,
+                    "fromLinkable" : true,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Right",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 1,
+                        "inputMinLinks" : 0,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 0,
+                        "outputMaxLinks" : 9999
+                      }
+                    ]
+                  }
+                },
+                {
+                  "port_properties_id" : 8,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : true,
+                    "porttype_id" : 2,
+                    "fromLinkable" : false,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Left",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 0,
+                        "inputMinLinks" : 1,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 1,
+                        "outputMaxLinks" : 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "initialLabel" : "DQ Record",
+              "initialXPos" : 100,
+              "group_label" : "D",
+              "nodeGroupType" : "data_quality",
+              "icon" : "dq_record.svg",
+              "groupLabel" : "Data Quality",
+              "node_properties_id" : 20,
+              "initialYPos" : 100,
+              "nodeGroupTypeId" : 5
+            },
+            "node_execution" : "",
+            "node_metrics" : {
+              "records_count" : null,
+              "time_elapsed" : ""
+            },
+            "nodeTypeName" : "dq_record",
+            "outputLinks" : [],
+            "is_node_validated" : false,
+            "configTypeId" : 205,
+            "inputLinks" : [
+              10002
+            ],
+            "config" : {
+              "emails" : [],
+              "nodeName" : "DQ Record 1",
+              "error_records_config" : {
+                "credential_type" : "",
+                "credential_name" : "Test GCP",
+                "connection_url" : "gs://test/test.csv",
+                "connection_type" : "gcs",
+                "connection_type_id" : 9,
+                "credential_type_id" : 3,
+                "max_error_records" : 100,
+                "credential_id" : 36
+              },
+              "description" : "",
+              "dq_rules" : []
+            },
+            "nodeId" : 100000001,
+            "nodeLabel" : "DQ Record",
+            "nodeUiConfig" : {
+              "yPos" : -450,
+              "ports_info" : [
+                {
+                  "port_properties_id" : 4,
+                  "port_id" : 1005
+                },
+                {
+                  "port_properties_id" : 8,
+                  "port_id" : 1006
+                }
+              ],
+              "xPos" : -1310
+            },
+            "configTypeName" : "DQForm POC"
+          },
+          {
+            "uiNodeOrder" : "4B",
+            "node_error_msg" : "",
+            "nodeVersion" : 1,
+            "nodeTypeId" : 21,
+            "nodeTypeUiConfig" : {
+              "acceptedPortProperties" : [
+                {
+                  "port_properties_id" : 8,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : true,
+                    "porttype_id" : 2,
+                    "fromLinkable" : false,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Left",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 0,
+                        "inputMinLinks" : 1,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 1,
+                        "outputMaxLinks" : 0
+                      }
+                    ]
+                  }
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : false,
+                    "porttype_id" : 2,
+                    "fromLinkable" : true,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Right",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 1,
+                        "inputMinLinks" : 0,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 0,
+                        "outputMaxLinks" : 9999
+                      }
+                    ]
+                  }
+                }
+              ],
+              "initialLabel" : "DQ Dataset",
+              "initialXPos" : 100,
+              "group_label" : "D",
+              "nodeGroupType" : "data_quality",
+              "icon" : "dq_dataset.svg",
+              "groupLabel" : "Data Quality",
+              "node_properties_id" : 21,
+              "initialYPos" : 100,
+              "nodeGroupTypeId" : 5
+            },
+            "node_execution" : "",
+            "node_metrics" : {
+              "records_count" : null,
+              "time_elapsed" : ""
+            },
+            "nodeTypeName" : "dq_dataset",
+            "outputLinks" : [
+              10002
+            ],
+            "is_node_validated" : false,
+            "configTypeId" : 204,
+            "inputLinks" : [
+              10003
+            ],
+            "config" : {
+              "emails" : [],
+              "nodeName" : "DQ Dataset 1",
+              "description" : "",
+              "dq_rules" : []
+            },
+            "nodeId" : 100000003,
+            "nodeLabel" : "DQ Dataset",
+            "nodeUiConfig" : {
+              "yPos" : -500,
+              "ports_info" : [
+                {
+                  "port_properties_id" : 8,
+                  "port_id" : 1009
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_id" : 1010
+                }
+              ],
+              "xPos" : -1600
+            },
+            "configTypeName" : "vue template control dq processor config Curation UI"
+          },
+          {
+            "uiNodeOrder" : "1D",
+            "node_error_msg" : "",
+            "nodeVersion" : 1,
+            "nodeTypeId" : 4,
+            "nodeTypeUiConfig" : {
+              "acceptedPortProperties" : [
+                {
+                  "port_properties_id" : 1,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "blue",
+                    "fill" : "#3498db",
+                    "stroke" : "#3498db",
+                    "toLinkable" : true,
+                    "porttype_id" : 1,
+                    "fromLinkable" : false,
+                    "width" : 9,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Left",
+                    "height" : 9,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 1,
+                        "outputMinLinks" : 0,
+                        "inputMinLinks" : 0,
+                        "node_linktype_name" : "dottedlink",
+                        "inputMaxLinks" : 9999,
+                        "outputMaxLinks" : 0
+                      }
+                    ]
+                  }
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : false,
+                    "porttype_id" : 2,
+                    "fromLinkable" : true,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Right",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 1,
+                        "inputMinLinks" : 0,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 0,
+                        "outputMaxLinks" : 9999
+                      }
+                    ]
+                  }
+                }
+              ],
+              "initialLabel" : "S3 Source",
+              "initialXPos" : 100,
+              "group_label" : "S",
+              "nodeGroupType" : "source",
+              "icon" : "s3.svg",
+              "groupLabel" : "Sources",
+              "node_properties_id" : 4,
+              "initialYPos" : 100,
+              "nodeGroupTypeId" : 2
+            },
+            "node_execution" : "",
+            "node_metrics" : {
+              "records_count" : null,
+              "time_elapsed" : ""
+            },
+            "nodeTypeName" : "s3_source",
+            "outputLinks" : [
+              10003
+            ],
+            "is_node_validated" : false,
+            "configTypeId" : 210,
+            "inputLinks" : [],
+            "config" : {
+              "nodeName" : "S3 Source 1",
+              "credential_name" : "",
+              "connection_type" : "s3",
+              "columns_info" : [],
+              "source_file_url" : "",
+              "description" : "",
+              "infer_schema" : false,
+              "connection_type_id" : 10,
+              "credential_type_id" : null,
+              "read_options" : [],
+              "credential_type" : "",
+              "file_type" : "fixed_width",
+              "header" : true,
+              "credential_id" : null
+            },
+            "nodeId" : 100000005,
+            "nodeLabel" : "S3",
+            "nodeUiConfig" : {
+              "yPos" : -411.0228474983079,
+              "ports_info" : [
+                {
+                  "port_properties_id" : 1,
+                  "port_id" : 1015
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_id" : 1016
+                }
+              ],
+              "xPos" : -1937.25
+            },
+            "configTypeName" : "vue template s3 source config Curation UI"
+          }
+        ],
+        "linkFromKeyProperty" : "fromNodeId",
+        "pipelineId" : 2781,
+        "pipeline_config" : {
+          "flow_details" : {
+            "pipeline_retry" : false,
+            "retry_count" : 3,
+            "pipeline_flow_timeout" : 72,
+            "email_notification" : {
+              "on_failure" : [],
+              "on_success" : [],
+              "email_check" : true
+            }
+          },
+          "pipeline_error_msg" : "",
+          "description" : "",
+          "workflow_engine_name" : "default_engine",
+          "contact_info" : {
+            "owner" : "SM2604",
+            "email" : "sushma.mankala@modak.com"
+          },
+          "pipeline_preconditions" : {
+            "pipeline_timeout" : 8,
+            "pipeline_details" : [
+              {
+                "status_code_id" : null,
+                "data_movement_id" : null,
+                "data_movement_name" : "",
+                "status_code_description" : ""
+              }
+            ],
+            "enabled" : false
+          },
+          "pipeline_name" : "dq test pipeline",
+          "tags" : [],
+          "workspace_pipeline_type_id" : 1,
+          "compute_engine_name" : "default_compute_engine",
+          "workflow_engine_id" : 1,
+          "engine_type" : "Spark",
+          "engine_sub_type" : "CDH",
+          "workspace_pipeline_type_name" : "batch",
+          "pipeline_postconditions" : {
+            "rest_api_details" : [
+              {
+                "status_code_id" : 21,
+                "ordinal_position" : 2,
+                "rest_api_id" : 56,
+                "rest_api_name" : "SK2007_schedule_pipeline",
+                "payload" : "bnVsbA==",
+                "status_code_description" : "COMPLETED"
+              },
+              {
+                "status_code_id" : null,
+                "ordinal_position" : 2,
+                "rest_api_id" : null,
+                "rest_api_name" : "",
+                "payload" : "bnVsbA==",
+                "status_code_description" : ""
+              }
+            ],
+            "enabled" : false
+          },
+          "spark_options" : "",
+          "compute_engine_id" : 1
+        },
+        "linkFromPortIdProperty" : "originPortId",
+        "class" : "go.GraphLinksModel"
+      }
     }
   ]
 }
