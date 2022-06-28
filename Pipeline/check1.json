@@ -4,275 +4,58 @@
       "pipelineJson" : {
         "linkToPortIdProperty" : "endPortId",
         "is_pipeline_validated" : false,
-        "is_active" : true,
+        "is_active" : false,
         "nodeKeyProperty" : "nodeId",
         "refresh_freq" : {
           "consider_timezone" : false,
-          "cron_freq" : "0 15 15 27 6 ? 2022",
-          "cron_timezone" : "Asia/Calcutta",
-          "cron_type" : "one_time"
+          "cron_freq" : "",
+          "cron_timezone" : "",
+          "cron_type" : ""
         },
         "linkToKeyProperty" : "toNodeId",
         "source_records" : null,
         "preview_records" : null,
         "linkDataArray" : [
           {
-            "endPortId" : 1006,
+            "endPortId" : 1005,
             "data" : {
               "schema" : {}
             },
-            "originPortId" : 1010,
-            "toNodeId" : 100000001,
+            "originPortId" : 1002,
+            "toNodeId" : 100000003,
             "linkType" : "schemalink",
-            "fromNodeId" : 100000003,
+            "fromNodeId" : 100000001,
+            "link_id" : 10001
+          },
+          {
+            "endPortId" : 1005,
+            "data" : {
+              "schema" : {}
+            },
+            "originPortId" : 1004,
+            "toNodeId" : 100000003,
+            "linkType" : "schemalink",
+            "fromNodeId" : 100000002,
             "link_id" : 10002
           },
           {
-            "endPortId" : 1009,
+            "endPortId" : 1007,
             "data" : {
               "schema" : {}
             },
-            "originPortId" : 1016,
-            "toNodeId" : 100000003,
+            "originPortId" : 1006,
+            "toNodeId" : 100000004,
             "linkType" : "schemalink",
-            "fromNodeId" : 100000005,
+            "fromNodeId" : 100000003,
             "link_id" : 10003
           }
         ],
         "nodeDataArray" : [
           {
-            "uiNodeOrder" : "4A",
+            "uiNodeOrder" : "1A",
             "node_error_msg" : "",
             "nodeVersion" : 1,
-            "nodeTypeId" : 20,
-            "nodeTypeUiConfig" : {
-              "acceptedPortProperties" : [
-                {
-                  "port_properties_id" : 4,
-                  "port_properties" : {
-                    "cursor" : "pointer",
-                    "porttype_name" : "white",
-                    "fill" : "white",
-                    "stroke" : "gray",
-                    "toLinkable" : false,
-                    "porttype_id" : 2,
-                    "fromLinkable" : true,
-                    "width" : 15,
-                    "alignment" : false,
-                    "alignment_properties" : {},
-                    "port_location" : "Right",
-                    "height" : 15,
-                    "acceptLinkTypes" : [
-                      {
-                        "node_linktype_id" : 2,
-                        "outputMinLinks" : 1,
-                        "inputMinLinks" : 0,
-                        "node_linktype_name" : "schemalink",
-                        "inputMaxLinks" : 0,
-                        "outputMaxLinks" : 9999
-                      }
-                    ]
-                  }
-                },
-                {
-                  "port_properties_id" : 8,
-                  "port_properties" : {
-                    "cursor" : "pointer",
-                    "porttype_name" : "white",
-                    "fill" : "white",
-                    "stroke" : "gray",
-                    "toLinkable" : true,
-                    "porttype_id" : 2,
-                    "fromLinkable" : false,
-                    "width" : 15,
-                    "alignment" : false,
-                    "alignment_properties" : {},
-                    "port_location" : "Left",
-                    "height" : 15,
-                    "acceptLinkTypes" : [
-                      {
-                        "node_linktype_id" : 2,
-                        "outputMinLinks" : 0,
-                        "inputMinLinks" : 1,
-                        "node_linktype_name" : "schemalink",
-                        "inputMaxLinks" : 1,
-                        "outputMaxLinks" : 0
-                      }
-                    ]
-                  }
-                }
-              ],
-              "initialLabel" : "DQ Record",
-              "initialXPos" : 100,
-              "group_label" : "D",
-              "nodeGroupType" : "data_quality",
-              "icon" : "dq_record.svg",
-              "groupLabel" : "Data Quality",
-              "node_properties_id" : 20,
-              "initialYPos" : 100,
-              "nodeGroupTypeId" : 5
-            },
-            "node_execution" : "",
-            "node_metrics" : {
-              "records_count" : null,
-              "time_elapsed" : ""
-            },
-            "nodeTypeName" : "dq_record",
-            "outputLinks" : [],
-            "is_node_validated" : false,
-            "configTypeId" : 205,
-            "inputLinks" : [
-              10002
-            ],
-            "config" : {
-              "emails" : [],
-              "nodeName" : "DQ Record 1",
-              "error_records_config" : {
-                "credential_type" : "",
-                "credential_name" : "Test GCP",
-                "connection_url" : "gs://test/test.csv",
-                "connection_type" : "gcs",
-                "connection_type_id" : 9,
-                "credential_type_id" : 3,
-                "max_error_records" : 100,
-                "credential_id" : 36
-              },
-              "description" : "",
-              "dq_rules" : []
-            },
-            "nodeId" : 100000001,
-            "nodeLabel" : "DQ Record",
-            "nodeUiConfig" : {
-              "yPos" : -450,
-              "ports_info" : [
-                {
-                  "port_properties_id" : 4,
-                  "port_id" : 1005
-                },
-                {
-                  "port_properties_id" : 8,
-                  "port_id" : 1006
-                }
-              ],
-              "xPos" : -1310
-            },
-            "configTypeName" : "DQForm POC"
-          },
-          {
-            "uiNodeOrder" : "4B",
-            "node_error_msg" : "",
-            "nodeVersion" : 1,
-            "nodeTypeId" : 21,
-            "nodeTypeUiConfig" : {
-              "acceptedPortProperties" : [
-                {
-                  "port_properties_id" : 8,
-                  "port_properties" : {
-                    "cursor" : "pointer",
-                    "porttype_name" : "white",
-                    "fill" : "white",
-                    "stroke" : "gray",
-                    "toLinkable" : true,
-                    "porttype_id" : 2,
-                    "fromLinkable" : false,
-                    "width" : 15,
-                    "alignment" : false,
-                    "alignment_properties" : {},
-                    "port_location" : "Left",
-                    "height" : 15,
-                    "acceptLinkTypes" : [
-                      {
-                        "node_linktype_id" : 2,
-                        "outputMinLinks" : 0,
-                        "inputMinLinks" : 1,
-                        "node_linktype_name" : "schemalink",
-                        "inputMaxLinks" : 1,
-                        "outputMaxLinks" : 0
-                      }
-                    ]
-                  }
-                },
-                {
-                  "port_properties_id" : 4,
-                  "port_properties" : {
-                    "cursor" : "pointer",
-                    "porttype_name" : "white",
-                    "fill" : "white",
-                    "stroke" : "gray",
-                    "toLinkable" : false,
-                    "porttype_id" : 2,
-                    "fromLinkable" : true,
-                    "width" : 15,
-                    "alignment" : false,
-                    "alignment_properties" : {},
-                    "port_location" : "Right",
-                    "height" : 15,
-                    "acceptLinkTypes" : [
-                      {
-                        "node_linktype_id" : 2,
-                        "outputMinLinks" : 1,
-                        "inputMinLinks" : 0,
-                        "node_linktype_name" : "schemalink",
-                        "inputMaxLinks" : 0,
-                        "outputMaxLinks" : 9999
-                      }
-                    ]
-                  }
-                }
-              ],
-              "initialLabel" : "DQ Dataset",
-              "initialXPos" : 100,
-              "group_label" : "D",
-              "nodeGroupType" : "data_quality",
-              "icon" : "dq_dataset.svg",
-              "groupLabel" : "Data Quality",
-              "node_properties_id" : 21,
-              "initialYPos" : 100,
-              "nodeGroupTypeId" : 5
-            },
-            "node_execution" : "",
-            "node_metrics" : {
-              "records_count" : null,
-              "time_elapsed" : ""
-            },
-            "nodeTypeName" : "dq_dataset",
-            "outputLinks" : [
-              10002
-            ],
-            "is_node_validated" : false,
-            "configTypeId" : 204,
-            "inputLinks" : [
-              10003
-            ],
-            "config" : {
-              "emails" : [],
-              "nodeName" : "DQ Dataset 1",
-              "description" : "",
-              "dq_rules" : []
-            },
-            "nodeId" : 100000003,
-            "nodeLabel" : "DQ Dataset",
-            "nodeUiConfig" : {
-              "yPos" : -500,
-              "ports_info" : [
-                {
-                  "port_properties_id" : 8,
-                  "port_id" : 1009
-                },
-                {
-                  "port_properties_id" : 4,
-                  "port_id" : 1010
-                }
-              ],
-              "xPos" : -1600
-            },
-            "configTypeName" : "vue template control dq processor config Curation UI"
-          },
-          {
-            "uiNodeOrder" : "1D",
-            "node_error_msg" : "",
-            "nodeVersion" : 1,
-            "nodeTypeId" : 4,
+            "nodeTypeId" : 1,
             "nodeTypeUiConfig" : {
               "acceptedPortProperties" : [
                 {
@@ -330,13 +113,13 @@
                   }
                 }
               ],
-              "initialLabel" : "S3 Source",
+              "initialLabel" : "JDBC Source",
               "initialXPos" : 100,
               "group_label" : "S",
               "nodeGroupType" : "source",
-              "icon" : "s3.svg",
+              "icon" : "jdbc.svg",
               "groupLabel" : "Sources",
-              "node_properties_id" : 4,
+              "node_properties_id" : 1,
               "initialYPos" : 100,
               "nodeGroupTypeId" : 2
             },
@@ -345,50 +128,464 @@
               "records_count" : null,
               "time_elapsed" : ""
             },
-            "nodeTypeName" : "s3_source",
+            "nodeTypeName" : "jdbc_source",
             "outputLinks" : [
-              10003
+              10001
             ],
             "is_node_validated" : false,
-            "configTypeId" : 210,
+            "configTypeId" : 144,
             "inputLinks" : [],
             "config" : {
-              "nodeName" : "S3 Source 1",
-              "credential_name" : "",
-              "connection_type" : "s3",
-              "columns_info" : [],
-              "source_file_url" : "",
+              "nodeName" : "JDBC Source 1",
+              "queryTimeout" : 30000,
+              "sql_query_error_msg" : "",
+              "credential_name" : "PostgreSQL Test Creds",
+              "connection_type" : "postgres",
+              "incremental_load" : [],
               "description" : "",
-              "infer_schema" : false,
-              "connection_type_id" : 10,
-              "credential_type_id" : null,
-              "read_options" : [],
-              "credential_type" : "",
-              "file_type" : "fixed_width",
-              "header" : true,
-              "credential_id" : null
+              "connection_type_id" : 1,
+              "credential_type_id" : 1,
+              "jdbc_url" : "jdbc:postgresql://w3.devpsql.modak.com/source_db",
+              "credential_type" : "credential_typecredential_validation_schemacredential_key_namescredential_type_id",
+              "driver" : "org.postgresql.Driver",
+              "jdbc_read_options" : [
+                {
+                  "value" : "",
+                  "option" : ""
+                }
+              ],
+              "fetchsize" : 1000,
+              "sql_query" : "select * from chembl.product_patents",
+              "credential_id" : 40
             },
-            "nodeId" : 100000005,
-            "nodeLabel" : "S3",
+            "nodeId" : 100000001,
+            "nodeLabel" : "JDBC",
             "nodeUiConfig" : {
-              "yPos" : -411.0228474983079,
+              "yPos" : -240,
               "ports_info" : [
                 {
                   "port_properties_id" : 1,
-                  "port_id" : 1015
+                  "port_id" : 1001
                 },
                 {
                   "port_properties_id" : 4,
-                  "port_id" : 1016
+                  "port_id" : 1002
                 }
               ],
-              "xPos" : -1937.25
+              "xPos" : -820
             },
-            "configTypeName" : "vue template s3 source config Curation UI"
+            "configTypeName" : "jdbc config form template"
+          },
+          {
+            "uiNodeOrder" : "1B",
+            "node_error_msg" : "",
+            "nodeVersion" : 1,
+            "nodeTypeId" : 2,
+            "nodeTypeUiConfig" : {
+              "acceptedPortProperties" : [
+                {
+                  "port_properties_id" : 1,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "blue",
+                    "fill" : "#3498db",
+                    "stroke" : "#3498db",
+                    "toLinkable" : true,
+                    "porttype_id" : 1,
+                    "fromLinkable" : false,
+                    "width" : 9,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Left",
+                    "height" : 9,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 1,
+                        "outputMinLinks" : 0,
+                        "inputMinLinks" : 0,
+                        "node_linktype_name" : "dottedlink",
+                        "inputMaxLinks" : 9999,
+                        "outputMaxLinks" : 0
+                      }
+                    ]
+                  }
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : false,
+                    "porttype_id" : 2,
+                    "fromLinkable" : true,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Right",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 1,
+                        "inputMinLinks" : 0,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 0,
+                        "outputMaxLinks" : 9999
+                      }
+                    ]
+                  }
+                }
+              ],
+              "initialLabel" : "Data Connection Dataset Source",
+              "initialXPos" : 100,
+              "group_label" : "S",
+              "nodeGroupType" : "source",
+              "icon" : "dataconnection.svg",
+              "groupLabel" : "Sources",
+              "node_properties_id" : 2,
+              "initialYPos" : 100,
+              "nodeGroupTypeId" : 2
+            },
+            "node_execution" : "",
+            "node_metrics" : {
+              "records_count" : null,
+              "time_elapsed" : ""
+            },
+            "nodeTypeName" : "data_connection_source",
+            "outputLinks" : [
+              10002
+            ],
+            "is_node_validated" : false,
+            "configTypeId" : 190,
+            "inputLinks" : [],
+            "config" : {
+              "nodeName" : "Data Connection Dataset Source 1",
+              "credential_name" : "orcl_test",
+              "object_type" : "",
+              "source_file_url" : "",
+              "data_connection_type_id" : null,
+              "description" : "",
+              "object_component_id" : 100902,
+              "data_connection_id" : 2432,
+              "data_connection_name" : "Ignore_tables_orc_test",
+              "credential_type_id" : 1,
+              "object_component_name" : "goa",
+              "jdbc_url" : "",
+              "object_id" : null,
+              "credential_type" : "Username with password",
+              "driver" : "",
+              "object_name" : "",
+              "data_connection_type" : "oracle",
+              "is_local" : null,
+              "credential_id" : 1702
+            },
+            "nodeId" : 100000002,
+            "nodeLabel" : "Data Connection Dataset",
+            "nodeUiConfig" : {
+              "yPos" : -30,
+              "ports_info" : [
+                {
+                  "port_properties_id" : 1,
+                  "port_id" : 1003
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_id" : 1004
+                }
+              ],
+              "xPos" : -810
+            },
+            "configTypeName" : "vue template datasource source config Curation UI"
+          },
+          {
+            "uiNodeOrder" : "3A",
+            "node_error_msg" : "",
+            "nodeVersion" : 1,
+            "nodeTypeId" : 14,
+            "nodeTypeUiConfig" : {
+              "acceptedPortProperties" : [
+                {
+                  "port_properties_id" : 5,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : true,
+                    "porttype_id" : 2,
+                    "fromLinkable" : false,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Left",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 0,
+                        "inputMinLinks" : 2,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 2,
+                        "outputMaxLinks" : 0
+                      }
+                    ]
+                  }
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : false,
+                    "porttype_id" : 2,
+                    "fromLinkable" : true,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Right",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 1,
+                        "inputMinLinks" : 0,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 0,
+                        "outputMaxLinks" : 9999
+                      }
+                    ]
+                  }
+                }
+              ],
+              "initialLabel" : "Join",
+              "initialXPos" : 100,
+              "group_label" : "P",
+              "nodeGroupType" : "processor",
+              "icon" : "join.svg",
+              "groupLabel" : "Processors",
+              "node_properties_id" : 14,
+              "initialYPos" : 100,
+              "nodeGroupTypeId" : 4
+            },
+            "node_execution" : "",
+            "node_metrics" : {
+              "records_count" : null,
+              "time_elapsed" : ""
+            },
+            "nodeTypeName" : "join",
+            "outputLinks" : [
+              10003
+            ],
+            "is_node_validated" : true,
+            "configTypeId" : 197,
+            "inputLinks" : [
+              10001,
+              10002
+            ],
+            "config" : {
+              "nodeName" : "Join 1",
+              "output_fields" : [
+                {
+                  "output_name" : "a_column1",
+                  "include" : true,
+                  "error_msg" : "",
+                  "column_name" : "Dataset1.column1"
+                },
+                {
+                  "output_name" : "a_column2",
+                  "include" : true,
+                  "error_msg" : "",
+                  "column_name" : "Dataset1.column2"
+                },
+                {
+                  "output_name" : "a_column3",
+                  "include" : true,
+                  "error_msg" : "",
+                  "column_name" : "Dataset1.column3"
+                },
+                {
+                  "output_name" : "b_column1",
+                  "include" : true,
+                  "error_msg" : "",
+                  "column_name" : "Dataset2.column1"
+                },
+                {
+                  "output_name" : "b_column2",
+                  "include" : true,
+                  "error_msg" : "",
+                  "column_name" : "Dataset2.column2"
+                },
+                {
+                  "output_name" : "b_column3",
+                  "include" : true,
+                  "error_msg" : "",
+                  "column_name" : "Dataset2.column3"
+                }
+              ],
+              "join_type" : "Inner Join",
+              "where_clause" : "",
+              "join_condition" : "",
+              "where_clause_error_msg" : "",
+              "join_condition_error_msg" : "",
+              "description" : "",
+              "view_names" : [
+                {
+                  "default_name" : "Dataset1",
+                  "error_msg" : "",
+                  "alias_name" : "a",
+                  "link_id" : "1123"
+                },
+                {
+                  "default_name" : "Dataset2",
+                  "error_msg" : "",
+                  "alias_name" : "b",
+                  "link_id" : "1125"
+                }
+              ]
+            },
+            "nodeId" : 100000003,
+            "nodeLabel" : "Join",
+            "nodeUiConfig" : {
+              "yPos" : -150,
+              "ports_info" : [
+                {
+                  "port_properties_id" : 5,
+                  "port_id" : 1005
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_id" : 1006
+                }
+              ],
+              "xPos" : -540
+            },
+            "configTypeName" : "vue template join processor config Curation UI"
+          },
+          {
+            "uiNodeOrder" : "3D",
+            "node_error_msg" : "",
+            "nodeVersion" : 1,
+            "nodeTypeId" : 17,
+            "nodeTypeUiConfig" : {
+              "acceptedPortProperties" : [
+                {
+                  "port_properties_id" : 8,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : true,
+                    "porttype_id" : 2,
+                    "fromLinkable" : false,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Left",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 0,
+                        "inputMinLinks" : 1,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 1,
+                        "outputMaxLinks" : 0
+                      }
+                    ]
+                  }
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_properties" : {
+                    "cursor" : "pointer",
+                    "porttype_name" : "white",
+                    "fill" : "white",
+                    "stroke" : "gray",
+                    "toLinkable" : false,
+                    "porttype_id" : 2,
+                    "fromLinkable" : true,
+                    "width" : 15,
+                    "alignment" : false,
+                    "alignment_properties" : {},
+                    "port_location" : "Right",
+                    "height" : 15,
+                    "acceptLinkTypes" : [
+                      {
+                        "node_linktype_id" : 2,
+                        "outputMinLinks" : 1,
+                        "inputMinLinks" : 0,
+                        "node_linktype_name" : "schemalink",
+                        "inputMaxLinks" : 0,
+                        "outputMaxLinks" : 9999
+                      }
+                    ]
+                  }
+                }
+              ],
+              "initialLabel" : "Transform",
+              "initialXPos" : 100,
+              "group_label" : "P",
+              "nodeGroupType" : "processor",
+              "icon" : "transform.svg",
+              "groupLabel" : "Processors",
+              "node_properties_id" : 17,
+              "initialYPos" : 100,
+              "nodeGroupTypeId" : 4
+            },
+            "node_execution" : "",
+            "node_metrics" : {
+              "records_count" : null,
+              "time_elapsed" : ""
+            },
+            "nodeTypeName" : "transform",
+            "outputLinks" : [],
+            "is_node_validated" : false,
+            "configTypeId" : 193,
+            "inputLinks" : [
+              10003
+            ],
+            "config" : {
+              "nodeName" : "Transform 1",
+              "where_clause" : "",
+              "where_clause_flag" : true,
+              "where_clause_error_msg" : "",
+              "description" : "",
+              "transform_fields" : [
+                {
+                  "error_msg" : "",
+                  "input_field" : "",
+                  "output_field_name" : "",
+                  "output_field_type" : ""
+                }
+              ]
+            },
+            "nodeId" : 100000004,
+            "nodeLabel" : "Transform",
+            "nodeUiConfig" : {
+              "yPos" : -140,
+              "ports_info" : [
+                {
+                  "port_properties_id" : 8,
+                  "port_id" : 1007
+                },
+                {
+                  "port_properties_id" : 4,
+                  "port_id" : 1008
+                }
+              ],
+              "xPos" : -260
+            },
+            "configTypeName" : "vue template transform processor config Curation UI"
           }
         ],
         "linkFromKeyProperty" : "fromNodeId",
-        "pipelineId" : 2781,
+        "pipelineId" : 2918,
+        "enable_cache" : true,
         "pipeline_config" : {
           "flow_details" : {
             "pipeline_retry" : false,
@@ -404,8 +601,8 @@
           "description" : "",
           "workflow_engine_name" : "default_engine",
           "contact_info" : {
-            "owner" : "SM2604",
-            "email" : "sushma.mankala@modak.com"
+            "owner" : "VS1504",
+            "email" : "undefined"
           },
           "pipeline_preconditions" : {
             "pipeline_timeout" : 8,
@@ -419,7 +616,7 @@
             ],
             "enabled" : false
           },
-          "pipeline_name" : "dq test pipeline",
+          "pipeline_name" : "Test_node_invalidation",
           "tags" : [],
           "workspace_pipeline_type_id" : 1,
           "compute_engine_name" : "default_compute_engine",
@@ -430,19 +627,11 @@
           "pipeline_postconditions" : {
             "rest_api_details" : [
               {
-                "status_code_id" : 21,
-                "ordinal_position" : 2,
-                "rest_api_id" : 56,
-                "rest_api_name" : "SK2007_schedule_pipeline",
-                "payload" : "bnVsbA==",
-                "status_code_description" : "COMPLETED"
-              },
-              {
                 "status_code_id" : null,
-                "ordinal_position" : 2,
+                "ordinal_position" : 1,
                 "rest_api_id" : null,
                 "rest_api_name" : "",
-                "payload" : "bnVsbA==",
+                "payload" : "",
                 "status_code_description" : ""
               }
             ],
